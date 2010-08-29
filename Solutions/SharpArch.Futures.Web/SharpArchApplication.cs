@@ -33,6 +33,15 @@
             this.sessions.Add(sessionDetails);
         }
 
+        public void AddSessionFor<TAutoPersistenceModelGenerator>(string sessionKey, IDictionary<string, string> nhibernateProperties)
+            where TAutoPersistenceModelGenerator : IAutoPersistenceModelGenerator, new()
+        {
+            var sessionDetails = new NHibernateSessionConfiguration(
+                sessionKey, this.GetNewSessionStorage(), new TAutoPersistenceModelGenerator(), nhibernateProperties);
+
+            this.sessions.Add(sessionDetails);
+        }
+
         protected virtual void Application_BeginRequest(object sender, EventArgs e)
         {
             NHibernateInitializer.Initialize(this.sessions);
