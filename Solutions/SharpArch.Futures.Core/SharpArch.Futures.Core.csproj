@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=0.3.0.54, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ReferencedAssemblies\AutoMapper\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ReferencedAssemblies\Castle\Castle.Core.dll</HintPath>
@@ -80,6 +84,10 @@
     <Compile Include="Initialization\NHibernate\NHibernateInitializer.cs" />
     <Compile Include="Initialization\NHibernate\NHibernateSessionConfiguration.cs" />
     <Compile Include="Initialization\Injection\ServiceLocatorInitializer.cs" />
+    <Compile Include="Mapping\Extensions.cs" />
+    <Compile Include="Mapping\IMapper.cs" />
+    <Compile Include="Mapping\Mapper.cs" />
+    <Compile Include="Mapping\MapperInstaller.cs" />
     <Compile Include="PersistanceSupport\ILinqRepository.cs" />
     <Compile Include="Specifications\AdHoc.cs" />
     <Compile Include="Specifications\ILinqSpecification.cs" />
