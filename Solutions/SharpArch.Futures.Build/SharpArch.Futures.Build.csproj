@@ -48,6 +48,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Targets\Build.targets" />
+    <None Include="Targets\Package.targets" />
+    <None Include="Targets\Merge.targets" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Tools\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

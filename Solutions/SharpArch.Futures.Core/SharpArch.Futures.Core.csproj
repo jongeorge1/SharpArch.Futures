@@ -81,6 +81,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\DomainEvents.cs" />
+    <Compile Include="Events\IDomainEvent.cs" />
+    <Compile Include="Events\IHandles.cs" />
     <Compile Include="Initialization\NHibernate\NHibernateInitializer.cs" />
     <Compile Include="Initialization\NHibernate\NHibernateSessionConfiguration.cs" />
     <Compile Include="Initialization\Injection\ServiceLocatorInitializer.cs" />
