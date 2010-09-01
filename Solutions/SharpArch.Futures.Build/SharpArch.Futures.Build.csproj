@@ -31,29 +31,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="FullBuild.proj" />
     <None Include="Targets\Build.targets" />
-    <None Include="Targets\Package.targets" />
+    <None Include="Targets\Version.targets" />
     <None Include="Targets\Merge.targets" />
+    <None Include="Tools\MSBuildCommunityTasks\MSBuild.Community.Tasks.chm" />
+    <None Include="Tools\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tools\" />
+    <Content Include="Tools\Microsoft\ILMerge.exe" />
+    <Content Include="Tools\MSBuildCommunityTasks\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Tools\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" />
+    <Content Include="Tools\MSBuildCommunityTasks\MSBuild.Community.Tasks.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

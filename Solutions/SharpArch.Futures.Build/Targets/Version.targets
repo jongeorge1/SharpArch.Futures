@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Target Name="Version">
+
+    <AssemblyInfo CodeLanguage="CS"
+              OutputFile="$(SolutionRoot)AssemblyVersion.cs"
+              AssemblyVersion="1.0.0.0"
+              AssemblyFileVersion="1.0.0.0" />
+
+  </Target>
+
+</Project>
