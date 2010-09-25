@@ -9,7 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArch.Futures.Web", "Sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArch.Futures.Testing", "SharpArch.Futures.Testing\SharpArch.Futures.Testing.csproj", "{635C4971-5A4E-46EA-AC18-CFB25DF8E27C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArch.Futures.Build", "SharpArch.Futures.Build\SharpArch.Futures.Build.csproj", "{F4A0BB8D-6F7C-484D-8A8C-3C09161B3FFE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{F5EFDA30-C3F2-477F-8645-E72F41026145}"
+	ProjectSection(SolutionItems) = preProject
+		..\Build\Build.cmd = ..\Build\Build.cmd
+		..\Build\Build.proj = ..\Build\Build.proj
+		..\Build\BuildAndPackage.cmd = ..\Build\BuildAndPackage.cmd
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +38,6 @@ Global
 		{635C4971-5A4E-46EA-AC18-CFB25DF8E27C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{635C4971-5A4E-46EA-AC18-CFB25DF8E27C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{635C4971-5A4E-46EA-AC18-CFB25DF8E27C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F4A0BB8D-6F7C-484D-8A8C-3C09161B3FFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4A0BB8D-6F7C-484D-8A8C-3C09161B3FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

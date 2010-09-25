@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="PackageArtefacts" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <SolutionName>SharpArch.Futures</SolutionName>
+    <SolutionsPath>$(MSBuildProjectDirectory)\..\Solutions</SolutionsPath>
+    <BuildPath>$(MSBuildProjectDirectory)\..\BuildSystem</BuildPath>
+    <SolutionRoot>$(BuildPath)\..\..</SolutionRoot>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <MergeFiles Include="$(SolutionsPath)\SharpArch.Futures.Core\bin\Release\SharpArch.Futures.Core.dll;
+                         $(SolutionsPath)\SharpArch.Futures.Data\bin\Release\SharpArch.Futures.Data.dll;
+                         $(SolutionsPath)\SharpArch.Futures.Testing\bin\Release\SharpArch.Futures.Testing.dll;
+                         $(SolutionsPath)\SharpArch.Futures.Web\bin\Release\SharpArch.Futures.Web.dll;">
+      <MergedAssembly>$(DropsPath)\SharpArch.Futures.dll</MergedAssembly>
+      <PackageName>dll</PackageName>
+    </MergeFiles>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageFiles Include="$(SolutionsPath)\**\*.*"
+                       Exclude="$(SolutionsPath)\**\bin\**;
+                                  $(SolutionsPath)\**\Logs\**;
+                                  $(SolutionsPath)\**\obj\**;">
+      <PackageName>$(DropsPath)\$(GlobalBuildVersionNumber)\$(PackageName).Source.v$(GlobalBuildVersionNumber).zip</PackageName>
+    </PackageFiles>
+    
+    <PackageFiles Include="$(DropsPath)\SharpArch.Futures.dll">
+      <PackageName>$(DropsPath)\$(GlobalBuildVersionNumber)\$(PackageName).dll.v$(GlobalBuildVersionNumber).zip</PackageName>
+    </PackageFiles>
+
+  </ItemGroup>
+
+  <Import Project="$(BuildPath)\BuildSystem.proj" />
+
+  <Target Name="Build"
+        DependsOnTargets="CleanSolution;
+                            UpdateAssemblyVersion;
+                            BuildSolutions;
+                            Merge" />
+
+  <Target Name="PackageArtefacts"
+          DependsOnTargets="Build;
+                            Package;
+                            BuildSuccess" />
+
+</Project>
