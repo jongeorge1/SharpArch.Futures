@@ -24,10 +24,12 @@
                                   $(SolutionsPath)\**\Logs\**;
                                   $(SolutionsPath)\**\obj\**;">
       <PackageName>$(DropsPath)\$(GlobalBuildVersionNumber)\$(PackageName).Source.v$(GlobalBuildVersionNumber).zip</PackageName>
+      <WorkingDirectory>$(SolutionsPath)</WorkingDirectory>
     </PackageFiles>
     
     <PackageFiles Include="$(DropsPath)\SharpArch.Futures.dll">
       <PackageName>$(DropsPath)\$(GlobalBuildVersionNumber)\$(PackageName).dll.v$(GlobalBuildVersionNumber).zip</PackageName>
+      <WorkingDirectory>$(DropsPath)</WorkingDirectory>
     </PackageFiles>
 
   </ItemGroup>
