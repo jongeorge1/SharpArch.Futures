@@ -17,12 +17,12 @@ namespace SharpArch.Futures.Data.NHibernate
 
         public IQueryable<T> FindAll()
         {
-            return Queryable.AsQueryable<T>(this.Session.Linq<T>());
+            return this.Session.Query<T>();
         }
 
         public IQueryable<T> FindAll(ILinqSpecification<T> specification)
         {
-            return specification.SatisfyingElementsFrom(this.Session.Linq<T>());
+            return specification.SatisfyingElementsFrom(this.Session.Query<T>());
         }
 
         public T FindOne(int id)
@@ -32,7 +32,7 @@ namespace SharpArch.Futures.Data.NHibernate
 
         public T FindOne(ILinqSpecification<T> specification)
         {
-            return specification.SatisfyingElementsFrom(this.Session.Linq<T>()).SingleOrDefault();
+            return specification.SatisfyingElementsFrom(this.Session.Query<T>()).SingleOrDefault();
         }
 
         public void Save(T entity)

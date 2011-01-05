@@ -1,6 +1,7 @@
 namespace SharpArch.Futures.Data.NHibernate
 {
-    using Castle.MicroKernel;
+    using Castle.MicroKernel.Registration;
+    using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
 
     using SharpArch.Core.PersistenceSupport;
@@ -12,35 +13,35 @@ namespace SharpArch.Futures.Data.NHibernate
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.AddComponent(
-                    "entityDuplicateChecker",
-                    typeof(IEntityDuplicateChecker),
-                    typeof(EntityDuplicateChecker));
+            container.Register(
+                Component.For<IEntityDuplicateChecker>()
+                         .ImplementedBy<EntityDuplicateChecker>()
+                         .Named("entityDuplicateChecker"));
 
-            container.AddComponent(
-                    "repositoryType",
-                    typeof(IRepository<>),
-                    typeof(Repository<>));
+            container.Register(
+                Component.For(typeof(IRepository<>))
+                         .ImplementedBy(typeof(Repository<>))
+                         .Named("repositoryType"));
 
-            container.AddComponent(
-                    "nhibernateRepositoryType",
-                    typeof(INHibernateRepository<>),
-                    typeof(NHibernateRepository<>));
+            container.Register(
+                Component.For(typeof(INHibernateRepository<>))
+                         .ImplementedBy(typeof(NHibernateRepository<>))
+                         .Named("nhibernateRepositoryType"));
 
-            container.AddComponent(
-                    "repositoryWithTypedId",
-                    typeof(IRepositoryWithTypedId<,>),
-                    typeof(RepositoryWithTypedId<,>));
+            container.Register(
+                Component.For(typeof(IRepositoryWithTypedId<,>))
+                         .ImplementedBy(typeof(RepositoryWithTypedId<,>))
+                         .Named("nhibernateRepositoryType"));
 
-            container.AddComponent(
-                    "nhibernateRepositoryWithTypedId",
-                    typeof(INHibernateRepositoryWithTypedId<,>),
-                    typeof(NHibernateRepositoryWithTypedId<,>));
+            container.Register(
+                Component.For(typeof(INHibernateRepositoryWithTypedId<,>))
+                         .ImplementedBy(typeof(NHibernateRepositoryWithTypedId<,>))
+                         .Named("nhibernateRepositoryType"));
 
-            container.AddComponent(
-                "linqRepository",
-                typeof(ILinqRepository<>),
-                typeof(LinqRepository<>));
+            container.Register(
+                Component.For(typeof(ILinqRepository<>))
+                         .ImplementedBy(typeof(LinqRepository<>))
+                         .Named("repositoryType"));
         }
     }
 }

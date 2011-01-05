@@ -3,6 +3,7 @@ namespace SharpArch.Futures.Core.Initialization.Injection
     using System.Collections.Generic;
     using System.Linq;
 
+    using Castle.MicroKernel.Registration;
     using Castle.Windsor;
 
     using CommonServiceLocator.WindsorAdapter;

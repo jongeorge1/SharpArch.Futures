@@ -2,7 +2,7 @@ namespace SharpArch.Futures.Testing
 {
     using System.Collections.Generic;
 
-    using Castle.Windsor;
+    using Castle.MicroKernel.Registration;
 
     using SharpArch.Data.NHibernate;
     using SharpArch.Data.NHibernate.FluentNHibernate;

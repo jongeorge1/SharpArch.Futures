@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Web;
 
-    using Castle.Windsor;
+    using Castle.MicroKernel.Registration;
 
     using SharpArch.Data.NHibernate;
     using SharpArch.Data.NHibernate.FluentNHibernate;
